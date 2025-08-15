@@ -1,0 +1,37 @@
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# Build artifacts
+target/
+build/
+dist/
+nbbuild/
+nbdist/
+.mvn/wrapper/maven-wrapper.jar
+.nb-gradle/
+
+# NetBeans
+/nbproject/private/
+
+# Spring Boot / Maven
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Database files
+backend/data/*.mv.db
+
+# Docs
+HELP.md
