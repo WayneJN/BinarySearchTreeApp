@@ -6,7 +6,14 @@ import { useState } from 'react';
 
 function App() {
     const [currentTree, setCurrentTree] = useState(null);
+    const [savedTrees, setSavedTrees] = useState([]);
     const [error, setError] = useState(null);
+
+    const handleTreeGenerated = (newTree) => {
+        setCurrentTree(newTree);
+        setSavedTrees(prev => [newTree, ...prev]); // Add to history
+        setError(null);
+    };
 
     return (
         <div className="App">
@@ -19,13 +26,16 @@ function App() {
             )}
 
             <NumberInputForm
-                onTreeGenerated={setCurrentTree}
+                onTreeGenerated={handleTreeGenerated}
                 onError={setError}
             />
 
             <TreeDisplay tree={currentTree} />
 
-            <PreviousTrees onError={setError} />
+            <PreviousTrees
+                trees={savedTrees}
+                setCurrentTree={setCurrentTree}
+            />
         </div>
     );
 }

@@ -1,0 +1,22 @@
+/* SVG lines connecting nodes */
+line {
+    stroke: #333; /* Dark gray */
+    stroke-width: 2;
+}
+
+/* Node circles */
+circle {
+    fill: #2e7d32; /* Dark green */
+    stroke: #1b5e20; /* Even darker border */
+    stroke-width: 2;
+}
+
+/* Node text */
+text {
+    fill: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}

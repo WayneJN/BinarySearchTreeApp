@@ -1,3 +1,5 @@
+import '../css/Toast.css';
+
 function Toast({ type, message }) {
     const styles = {
         padding: '0.5rem 1rem',

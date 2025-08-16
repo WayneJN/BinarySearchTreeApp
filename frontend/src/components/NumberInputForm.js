@@ -2,6 +2,9 @@ import { useState } from 'react';
 import axios from 'axios';
 import Spinner from './Spinner';
 import Toast from './Toast';
+import '../css/NumberInputForm.css';
+
+
 
 function NumberInputForm({ onTreeGenerated, onError }) {
     const [numbers, setNumbers] = useState('');
@@ -14,9 +17,17 @@ function NumberInputForm({ onTreeGenerated, onError }) {
         setToast(null);
 
         try {
-            const response = await axios.post('http://localhost:8080/api/bst/process-numbers', {
-                numbers: numbers.split(',').map(n => parseInt(n.trim()))
-            });
+            const parsedNumbers = numbers
+                .split(',')
+                .map(n => parseInt(n.trim()))
+                .filter(n => !isNaN(n));
+
+            const payload = { numbers: parsedNumbers };
+
+            const response = await axios.post(
+                'http://localhost:8080/api/bst/process-numbers',
+                payload
+            );
 
             onTreeGenerated(response.data);
             setToast({ type: 'success', message: 'Tree generated successfully!' });

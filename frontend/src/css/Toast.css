@@ -1,0 +1,18 @@
+/* Target any div inside Toast */
+div {
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Success and error background colors */
+div:has([type="success"]) {
+    background-color: green;
+}
+
+div:has([type="error"]) {
+    background-color: red;
+}

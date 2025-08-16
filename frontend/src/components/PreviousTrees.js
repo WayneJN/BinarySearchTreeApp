@@ -1,41 +1,27 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Spinner from './Spinner';
-import Toast from './Toast';
+import React from 'react';
+import '../css/PreviousTrees.css';
 
-function PreviousTrees({ onError }) {
-  const [trees, setTrees] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [toast, setToast] = useState(null);
 
-  useEffect(() => {
-    const fetchTrees = async () => {
-      setLoading(true);
-      setToast(null);
-
-      try {
-        const response = await axios.get('http://localhost:8080/api/bst/previous-trees');
-        setTrees(response.data);
-        setToast({ type: 'success', message: 'Previous trees loaded!' });
-      } catch (error) {
-        onError?.(error.message);
-        setToast({ type: 'error', message: 'Failed to load previous trees.' });
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTrees();
-  }, [onError]);
+function PreviousTrees({ trees, setCurrentTree }) {
+  if (!trees || trees.length === 0) return <p>No previous trees saved.</p>;
 
   return (
       <div>
-        <h2>Previous Trees</h2>
-        {loading && <Spinner />}
-        {toast && <Toast type={toast.type} message={toast.message} />}
-        <ul>
+        <h3>🌲 Previous Trees</h3>
+        <ul style={{ listStyleType: 'none', padding: 0 }}>
           {trees.map((tree, index) => (
-              <li key={index}>{JSON.stringify(tree)}</li>
+              <li key={index} style={{
+                marginBottom: '10px',
+                padding: '10px',
+                border: '1px solid #ccc',
+                borderRadius: '5px',
+                backgroundColor: '#f9f9f9'
+              }}>
+                <strong>Tree #{index + 1}</strong>
+                <div style={{ marginTop: '5px' }}>
+                  <button onClick={() => setCurrentTree(tree)}>👁️ View</button>
+                </div>
+              </li>
           ))}
         </ul>
       </div>
