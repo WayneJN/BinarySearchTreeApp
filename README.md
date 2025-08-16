@@ -45,33 +45,21 @@ This application was developed as part of the **Semester 4 Final Sprint** for th
 
 ## 📂 Project Structure
 
-BinarySearchTreeApp/ 
-
-├── backend/ 
-
-│ ├── controller/ 
-
-│ ├── model/ 
-
-│ ├── repository/ 
-
-│ ├── service/ 
-
-│ ├── BstappApplication.java 
-
-
-│ └── DataSeeder.java 
-
-├── frontend/ 
-
-│ ├── components/ 
-
-│ ├── css/ 
-
-│ ├── App.js 
-
-│ └── bstApi.js
-
+```
+BinarySearchTreeApp/
+├── backend/
+│   ├── controller/
+│   ├── model/
+│   ├── repository/
+│   ├── service/
+│   ├── BstappApplication.java
+│   └── DataSeeder.java
+├── frontend/
+│   ├── components/
+│   ├── css/
+│   ├── App.js
+│   └── bstApi.js
+```
 
 ---
 
