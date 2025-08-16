@@ -1,11 +1,10 @@
-/* Style the heading */
 div > h3 {
     text-align: center;
     margin-bottom: 10px;
     font-size: 1.2rem;
+    color: #2e7d32;
 }
 
-/* Style the unordered list */
 ul {
     list-style-type: none;
     padding: 0;
@@ -13,25 +12,22 @@ ul {
     max-width: 600px;
 }
 
-/* Style each tree card */
 ul li {
-    background: #f9f9f9;
-    border: 1px solid #ccc;
+    background: #f1f8e9;
+    border: 1px solid #81c784;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     transition: box-shadow 0.2s ease;
 }
 
-/* Hover effect */
 ul li:hover {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Style the button */
 ul li button {
     padding: 6px 12px;
-    background-color: #007bff;
+    background-color: #2e7d32;
     color: white;
     border: none;
     border-radius: 4px;
@@ -39,5 +35,5 @@ ul li button {
 }
 
 ul li button:hover {
-    background-color: #0056b3;
+    background-color: #1b5e20;
 }

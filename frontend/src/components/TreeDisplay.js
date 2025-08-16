@@ -40,13 +40,15 @@ function TreeDisplay({ tree }) {
 
     return (
         <div className="tree-display">
-            <h3>Binary Search Tree</h3>
-
-            <div className="view-buttons-row">
-                <button onClick={() => setView('tree')}>🌳 Tree View</button>
-                <button onClick={() => setView('traversal')}>📜 Traversal View</button>
-                <button onClick={() => setView('raw')}>🧾 Raw JSON View</button>
-                <button onClick={() => setView('graphical')}>🖼️ Graphical View</button>
+            {/* ✅ Header container */}
+            <div className="tree-display-header">
+                <h3>Binary Search Tree</h3>
+                <div className="view-buttons-row">
+                    <button onClick={() => setView('tree')}>🌳 Tree View</button>
+                    <button onClick={() => setView('traversal')}>📜 Traversal View</button>
+                    <button onClick={() => setView('raw')}>🧾 Raw JSON View</button>
+                    <button onClick={() => setView('graphical')}>🖼️ Graphical View</button>
+                </div>
             </div>
 
             {view === 'tree' && parsedTree ? (
@@ -58,9 +60,7 @@ function TreeDisplay({ tree }) {
                     ))}
                 </ul>
             ) : view === 'raw' && tree.treeJson ? (
-                <pre>
-                    {tree.treeJson}
-                </pre>
+                <pre>{tree.treeJson}</pre>
             ) : view === 'graphical' && parsedTree ? (
                 <div className="graphical-container">
                     <svg width="100%" height="500">

@@ -1,17 +1,14 @@
-/* SVG lines connecting nodes */
 line {
-    stroke: #333; /* Dark gray */
+    stroke: #1b5e20;
     stroke-width: 2;
 }
 
-/* Node circles */
 circle {
-    fill: #2e7d32; /* Dark green */
-    stroke: #1b5e20; /* Even darker border */
+    fill: #2e7d32;
+    stroke: #1b5e20;
     stroke-width: 2;
 }
 
-/* Node text */
 text {
     fill: #ffffff;
     font-size: 16px;
